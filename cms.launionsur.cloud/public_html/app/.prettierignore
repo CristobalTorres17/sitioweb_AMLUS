@@ -1,0 +1,8 @@
+node_modules/
+public/build/
+vendor/
+storage/
+.git/
+*.min.js
+package-lock.json
+yarn.lock

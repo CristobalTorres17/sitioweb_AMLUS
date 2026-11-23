@@ -1,0 +1,234 @@
+:root {
+    /* --- Brand colors (RGB triplets for Tailwind compatibility) --- */
+    --color-primary: 1 35 64; /* #012340 */
+    --color-primary-hex: #012340;
+    --color-primary-alt: 1 40 64; /* #012840 */
+    --color-primary-alt-hex: #012840;
+    --color-primary-hover: 10 58 110; /* #0a3a6e */
+    --color-primary-hover-hex: #0a3a6e;
+    --color-primary-tint: 232 240 248; /* #e8f0f8 */
+    --color-primary-tint-hex: #e8f0f8;
+
+    --color-gold: 217 183 119; /* #d9b777 */
+    --color-gold-hex: #d9b777;
+    --color-gold-hover: 196 160 85; /* #c4a055 */
+    --color-gold-hover-hex: #c4a055;
+    --color-gold-tint: 250 245 236; /* #faf5ec */
+    --color-gold-tint-hex: #faf5ec;
+    --color-beige: 217 195 154; /* #d9c39a */
+    --color-beige-hex: #d9c39a;
+    --color-brown: 140 96 58; /* #8c603a */
+    --color-brown-hex: #8c603a;
+
+    /* --- Surface & Background --- */
+    --color-bg: 247 249 252; /* #f7f9fc */
+    --color-bg-hex: #f7f9fc;
+    --color-bg-secondary: 238 243 249; /* #eef3f9 */
+    --color-bg-secondary-hex: #eef3f9;
+    --color-surface: 255 255 255; /* #ffffff */
+    --color-surface-hex: #ffffff;
+    --color-border: 221 230 240; /* #dde6f0 */
+    --color-border-hex: #dde6f0;
+    --color-border-strong: 170 184 200; /* #aab8c8 */
+    --color-border-strong-hex: #aab8c8;
+
+    /* --- Text --- */
+    --color-text-primary: 13 31 45; /* #0d1f2d */
+    --color-text-primary-hex: #0d1f2d;
+    --color-text-secondary: 74 96 114; /* #4a6072 */
+    --color-text-secondary-hex: #4a6072;
+    --color-text-muted: 138 154 176; /* #8a9ab0 */
+    --color-text-muted-hex: #8a9ab0;
+    --color-text-inverse: 240 232 212; /* #f0e8d4 */
+    --color-text-inverse-hex: #f0e8d4;
+
+    /* --- Semantic states --- */
+    --color-success: 26 107 60; /* #1a6b3c */
+    --color-success-hex: #1a6b3c;
+    --color-success-bg: 230 247 237; /* #e6f7ed */
+    --color-success-bg-hex: #e6f7ed;
+    --color-success-border: 168 216 185; /* #a8d8b9 */
+    --color-success-border-hex: #a8d8b9;
+
+    --color-warning: 122 80 0; /* #7a5000 */
+    --color-warning-hex: #7a5000;
+    --color-warning-bg: 255 248 225; /* #fff8e1 */
+    --color-warning-bg-hex: #fff8e1;
+    --color-warning-border: 240 208 112; /* #f0d070 */
+    --color-warning-border-hex: #f0d070;
+
+    --color-error: 139 26 26; /* #8b1a1a */
+    --color-error-hex: #8b1a1a;
+    --color-error-bg: 253 236 234; /* #fdecea */
+    --color-error-bg-hex: #fdecea;
+    --color-error-border: 245 168 164; /* #f5a8a4 */
+    --color-error-border-hex: #f5a8a4;
+
+    --color-info: 1 35 64; /* #012340 */
+    --color-info-hex: #012340;
+    --color-info-bg: 232 240 248; /* #e8f0f8 */
+    --color-info-bg-hex: #e8f0f8;
+    --color-info-border: 197 215 234; /* #c5d7ea */
+    --color-info-border-hex: #c5d7ea;
+
+    /* --- Spacing scale --- */
+    --space-1: 4px;
+    --space-2: 8px;
+    --space-3: 12px;
+    --space-4: 16px;
+    --space-6: 24px;
+    --space-8: 32px;
+    --space-12: 48px;
+
+    /* --- Border radius --- */
+    --radius-sm: 4px;
+    --radius-md: 6px;
+    --radius-lg: 8px;
+    --radius-xl: 12px;
+    --radius-pill: 999px;
+
+    /* --- Shadows --- */
+    --shadow-sm: 0 1px 3px rgba(1, 35, 64, 0.07);
+    --shadow-md: 0 4px 12px rgba(1, 35, 64, 0.1);
+    --shadow-lg: 0 8px 24px rgba(1, 35, 64, 0.13);
+
+    /* --- Focus ring colors --- */
+    --focus-ring-color: rgb(var(--color-primary) / 0.08);
+    --focus-ring-error-color: rgb(var(--color-error) / 0.08);
+    --focus-ring-success-color: rgb(var(--color-success) / 0.08);
+
+    /* --- Legacy RGB triplets (keep for compatibility) --- */
+    --laus-1: 1 35 64; /* #012340 */
+    --laus-2: 1 40 64; /* #012840 */
+    --laus-3: 217 183 119; /* #d9b777 */
+    --laus-4: 217 195 154; /* #d9c39a */
+    --laus-5: 140 96 58; /* #8c603a */
+
+    /* Semantic variables (legacy) */
+    --color-accent: var(--laus-3);
+    --color-muted: 140 140 140;
+}
+
+/* Dark theme overrides (optional) */
+[data-theme='dark'] {
+    --color-primary: 217 195 154; /* lighter primary on dark */
+    --color-accent: 217 183 119;
+}
+
+/* === Design Option A (Institutional Classic) ===
+   Applied when <html data-design-option="a"> is set (default)
+   This block documents and scopes Option A component styles used across the CMS. */
+[data-design-option='a'] {
+    /* Option A uses the primary navy and gold accents defined in :root */
+    --design-sidebar-bg: rgb(var(--color-primary));
+    --design-sidebar-text: rgb(var(--color-text-inverse));
+    --design-topbar-bg: rgb(var(--color-surface));
+    --design-card-bg: rgb(var(--color-surface));
+    --design-card-border: rgb(var(--color-border));
+}
+
+/* Sidebar (example usage — adapt selectors to app structure) */
+[data-design-option='a'] .app-sidebar {
+    background-color: var(--design-sidebar-bg);
+    color: var(--design-sidebar-text);
+}
+[data-design-option='a'] .app-sidebar a {
+    color: var(--design-sidebar-text);
+}
+[data-design-option='a'] .app-sidebar a.active {
+    background-color: rgb(var(--color-gold) / 0.12);
+    color: rgb(var(--color-gold));
+}
+
+/* Top bar and cards */
+[data-design-option='a'] .topbar {
+    background-color: var(--design-topbar-bg);
+    border-bottom: 1px solid var(--design-card-border);
+}
+[data-design-option='a'] .card {
+    background-color: var(--design-card-bg);
+    border: 1px solid var(--design-card-border);
+    box-shadow: var(--shadow-md);
+}
+
+/* Badges and states */
+[data-design-option='a'] .badge-success {
+    background-color: rgb(var(--color-success-bg));
+    color: rgb(var(--color-success));
+}
+[data-design-option='a'] .badge-warning {
+    background-color: rgb(var(--color-warning-bg));
+    color: rgb(var(--color-warning));
+}
+[data-design-option='a'] .badge-error {
+    background-color: rgb(var(--color-error-bg));
+    color: rgb(var(--color-error));
+}
+[data-design-option='a'] .badge-info {
+    background-color: rgb(var(--color-info-bg));
+    color: rgb(var(--color-info));
+}
+
+/* Tables header */
+[data-design-option='a'] table thead {
+    background-color: rgb(var(--color-bg));
+    color: rgb(var(--color-text-secondary));
+}
+
+/* Utility classes for quick previews (keeps compatibility with existing branding file) */
+.brand-laus-1 {
+    color: rgb(var(--laus-1));
+}
+.brand-laus-2 {
+    color: rgb(var(--laus-2));
+}
+.brand-laus-3 {
+    color: rgb(var(--laus-3));
+}
+.brand-laus-4 {
+    color: rgb(var(--laus-4));
+}
+.brand-laus-5 {
+    color: rgb(var(--laus-5));
+}
+
+/* === Media Form Input Themization === */
+/* Inputs in Media forms use primary color border and gold accent on focus */
+.media-form input,
+.media-form textarea,
+.media-form select {
+    border-color: rgb(var(--color-border));
+    color: rgb(var(--color-text-primary));
+    background-color: rgb(var(--color-surface));
+}
+
+.media-form input:focus,
+.media-form textarea:focus,
+.media-form select:focus {
+    border-color: rgb(var(--color-primary));
+    outline: none;
+    box-shadow: 0 0 0 3px var(--focus-ring-color);
+}
+
+.media-form input:invalid:focus,
+.media-form textarea:invalid:focus {
+    border-color: rgb(var(--color-error));
+    outline: none;
+    box-shadow: 0 0 0 3px var(--focus-ring-error-color);
+}
+
+/* Server-side / JS error state helper */
+.media-form .has-error input,
+.media-form .has-error textarea,
+.media-form .has-error select {
+    border-color: rgb(var(--color-error));
+    box-shadow: 0 0 0 3px var(--focus-ring-error-color);
+}
+
+/* Success state helper */
+.media-form .has-success input,
+.media-form .has-success textarea,
+.media-form .has-success select {
+    border-color: rgb(var(--color-success));
+    box-shadow: 0 0 0 3px var(--focus-ring-success-color);
+}

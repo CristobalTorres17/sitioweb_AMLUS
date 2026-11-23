@@ -1,0 +1,46 @@
+@import './theme.css';
+
+@tailwind base;
+@layer base {
+    input[type='text'],
+    input:not([type]),
+    input[type='email'],
+    input[type='url'],
+    input[type='password'],
+    input[type='number'],
+    input[type='date'],
+    input[type='datetime-local'],
+    input[type='month'],
+    input[type='search'],
+    input[type='tel'],
+    input[type='time'],
+    input[type='week'],
+    select,
+    textarea {
+        border-radius: 0.375rem; /* match Tailwind `rounded-md` */
+    }
+}
+@tailwind components;
+@layer components {
+    /* Themed borders for create/edit forms: use the semantic border token (border-border)
+         Targets the content card used in Create pages (rounded-lg bg-surface > form) */
+    .rounded-lg.bg-surface > form :is(input, textarea, select) {
+        --tw-border-opacity: 1;
+        border-color: rgb(221 230 240 / var(--tw-border-opacity, 1)) !important;
+    }
+
+    /* Focus styles: default uses gold (`--color-accent`), optional blue if element has `.focus-blue` */
+    .rounded-lg.bg-surface > form :is(input, textarea, select):not(.focus-blue):focus {
+        outline: none;
+        box-shadow: 0 0 0 4px rgb(var(--color-accent) / 0.18);
+        border-color: rgb(var(--color-accent) / 1) !important;
+    }
+
+    .rounded-lg.bg-surface > form :is(input, textarea, select).focus-blue:focus,
+    .rounded-lg.bg-surface > form :is(input, textarea, select):focus.focus-blue {
+        outline: none;
+        box-shadow: 0 0 0 4px rgb(59 130 246 / 0.18); /* blue-500 */
+        border-color: rgb(59 130 246 / 1) !important;
+    }
+}
+@tailwind utilities;

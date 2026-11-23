@@ -1,0 +1,27 @@
+<?php
+
+namespace Database\Factories;
+
+use App\Models\ServiceCategory;
+use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Str;
+
+class ServiceCategoryFactory extends Factory
+{
+    protected $model = ServiceCategory::class;
+
+    public function definition()
+    {
+        $name = $this->faker->unique()->words(2, true);
+        return [
+            'name' => ucfirst($name),
+            'slug' => Str::slug($name),
+            'type' => ServiceCategory::TYPE_SERVICE,
+            'description' => $this->faker->sentence(),
+            'icon' => $this->faker->randomElement(['verified', 'description', 'public', 'campaign']),
+            'color' => $this->faker->hexColor(),
+            'is_active' => $this->faker->boolean(85),
+            'position' => $this->faker->numberBetween(0, 20),
+        ];
+    }
+}
